@@ -1,11 +1,17 @@
-import React, { useState } from "react";
 
-const Card = ({ day, createTask, toggleTask, Deletetask }) => {
+               import React, { useState } from "react";
+
+const Card = ({ day, createTask, toggleTask, Deletetask, deleteday }) => {
   const [task, setTask] = useState("");
 
   return (
     <div className="each-day">
-      <h2>{day.title}</h2>
+      <h2>
+        {day.title}{" "}
+        <a onClick={deleteday}>
+          <button>X</button>
+        </a>
+      </h2>
 
       <input
         type="text"
